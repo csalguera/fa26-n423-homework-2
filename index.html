@@ -3,9 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./css/styles.css" />
     <script defer src="./js/app.js"></script>
-    <title>Document</title>
+    <title>Atmos | Weather, clearly</title>
   </head>
-  <body></body>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Atmos home"><span class="brand-mark">A</span><span>atmos</span></a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a class="is-active" href="#today">Today</a><a href="#forecast">Forecast</a><a href="#hourly">Hourly</a><a href="#details">Details</a>
+      </nav>
+      <div class="account-actions"><button class="button button-quiet" type="button" data-action="login">Log in</button><button class="button button-dark" type="button" data-action="signup">Sign up</button></div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy"><p class="eyebrow">Your daily weather desk</p><h1 id="page-title">Know the sky<br /><em>before you go.</em></h1><p class="hero-description">A calm, clear forecast for wherever the day takes you.</p></div>
+        <form class="search-panel" id="weather-form">
+          <label for="location-input">Search a city or ZIP code</label>
+          <div class="search-row"><input id="location-input" name="location" type="search" placeholder="e.g. Bloomington or 47401" value="Bloomington, IN" required /><button class="button button-primary" type="submit"><span>Search</span><span aria-hidden="true">&#8594;</span></button></div>
+          <div class="search-options"><label for="days-input">Forecast length</label><select id="days-input" name="days"><option value="3">3 days</option><option value="5" selected>5 days</option><option value="7">7 days</option><option value="10">10 days</option><option value="14">14 days</option></select><button class="text-button" type="button" id="settings-button">API settings</button></div>
+          <div class="api-settings" id="api-settings" hidden><label for="api-key-input">WeatherAPI.com key</label><div class="key-row"><input id="api-key-input" type="password" placeholder="Paste your key locally" autocomplete="off" /><button class="button button-small" type="button" id="save-key-button">Save key</button></div><small>Your key stays in this browser and is never committed to the project.</small></div>
+        </form>
+      </section>
+
+      <section class="status-message" id="status-message" role="status" aria-live="polite">Add a WeatherAPI.com key in API settings to load live weather.</section>
+      <section class="weather-layout" id="today" aria-label="Current weather">
+        <article class="current-card"><div class="card-heading"><div><p class="eyebrow">Right now</p><h2 id="location-name">Bloomington, IN</h2><p id="local-time">Loading local time...</p></div><div class="weather-icon" id="current-icon" aria-hidden="true">☀</div></div><div class="temperature-row"><span id="current-temp">--</span><span class="degree">°</span><div><strong id="current-condition">Waiting for forecast</strong><span>Feels like <b id="feels-like">--</b>°</span></div></div><div class="current-metrics"><div><span>High / low</span><strong><b id="today-high">--</b>° / <b id="today-low">--</b>°</strong></div><div><span>Wind</span><strong id="wind-value">--</strong></div><div><span>Humidity</span><strong id="humidity-value">--</strong></div><div><span>Visibility</span><strong id="visibility-value">--</strong></div></div></article>
+        <article class="sun-card" id="details"><div class="card-heading"><div><p class="eyebrow">Daylight</p><h2>Sun & moon</h2></div><span class="moon-mark" aria-hidden="true">◐</span></div><div class="sun-times"><div><span>Sunrise</span><strong id="sunrise">--</strong></div><div><span>Sunset</span><strong id="sunset">--</strong></div><div><span>Moon phase</span><strong id="moon-phase">--</strong></div><div><span>Moonrise</span><strong id="moonrise">--</strong></div></div><div class="daylight-bar"><span></span></div><p class="card-note" id="daylight-note">Daylight data will appear with your forecast.</p></article>
+      </section>
+      <section class="section-block" id="hourly"><div class="section-header"><div><p class="eyebrow">The next 24 hours</p><h2>Hourly outlook</h2></div><span class="section-meta" id="hourly-meta">--</span></div><div class="hourly-scroll" id="hourly-list"><p class="empty-state">Hourly conditions will appear here.</p></div></section>
+      <section class="section-block" id="forecast"><div class="section-header"><div><p class="eyebrow">Plan ahead</p><h2>Extended forecast</h2></div><span class="section-meta" id="forecast-meta">--</span></div><div class="forecast-grid" id="forecast-list"><p class="empty-state">Your daily forecast will appear here.</p></div></section>
+      <section class="insight-grid"><article class="insight-card air-card"><div class="card-heading"><div><p class="eyebrow">Breathe easy</p><h2>Air quality</h2></div><span class="status-dot good"></span></div><strong class="insight-value" id="air-quality">--</strong><p id="air-quality-label">Air quality data will appear with your forecast.</p><div class="air-scale"><span></span></div><div class="air-labels"><span>Good</span><span>Moderate</span><span>Unhealthy</span></div></article><article class="insight-card alert-card"><div class="card-heading"><div><p class="eyebrow">Stay informed</p><h2>Weather alerts</h2></div><span class="alert-icon">!</span></div><p class="alert-title" id="alert-title">No alerts loaded</p><p id="alert-description">Local alerts from WeatherAPI will be shown here when available.</p></article></section>
+    </main>
+    <footer class="site-footer"><span>Atmos weather desk</span><span>Powered by <a href="https://www.weatherapi.com/" target="_blank" rel="noreferrer">WeatherAPI.com</a></span></footer>
+  </body>
 </html>
