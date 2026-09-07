@@ -1,12 +1,6 @@
 const form = document.querySelector("#weather-form");
 const statusMessage = document.querySelector("#status-message");
-const settingsButton = document.querySelector("#settings-button");
-const settingsPanel = document.querySelector("#api-settings");
-const apiKeyInput = document.querySelector("#api-key-input");
-const saveKeyButton = document.querySelector("#save-key-button");
-const apiKeyStorage = "atmos-weather-api-key";
-
-const getApiKey = () => localStorage.getItem(apiKeyStorage) || "";
+const apiKey = window.ATMOS_CONFIG?.weatherApiKey || "";
 const setStatus = (message, type = "") => {
   statusMessage.textContent = message;
   statusMessage.className = `status-message ${type}`;
@@ -118,14 +112,11 @@ const renderInsights = (data) => {
 };
 
 const loadWeather = async (location, days) => {
-  const apiKey = getApiKey();
   if (!apiKey) {
-    settingsPanel.hidden = false;
     setStatus(
-      "Add your WeatherAPI.com key in API settings before searching.",
+      "Weather service is not configured. Add a key in js/config.js.",
       "is-error",
     );
-    apiKeyInput.focus();
     return;
   }
   setStatus("Finding the latest forecast...", "is-loading");
@@ -157,21 +148,10 @@ const loadWeather = async (location, days) => {
   }
 };
 
-settingsButton.addEventListener("click", () => {
-  settingsPanel.hidden = !settingsPanel.hidden;
-  if (!settingsPanel.hidden) apiKeyInput.focus();
-});
-saveKeyButton.addEventListener("click", () => {
-  const key = apiKeyInput.value.trim();
-  if (!key)
-    return setStatus("Enter a WeatherAPI.com key to save it.", "is-error");
-  localStorage.setItem(apiKeyStorage, key);
-  settingsPanel.hidden = true;
-  setStatus("Key saved locally. Search to load the forecast.", "is-success");
-});
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const formData = new FormData(form);
   loadWeather(formData.get("location"), formData.get("days"));
 });
-if (getApiKey()) apiKeyInput.value = getApiKey();
+
+loadWeather("Bloomington, IN", document.querySelector("#days-input").value);

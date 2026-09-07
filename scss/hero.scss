@@ -20,16 +20,14 @@
   padding: 26px;
 }
 
-.search-panel > label,
-.api-settings label {
+.search-panel > label {
   display: block;
   font-size: 0.8rem;
   font-weight: 700;
   margin-bottom: 9px;
 }
 
-.search-row,
-.key-row {
+.search-row {
   display: flex;
   gap: 8px;
 }
@@ -74,34 +72,6 @@ select {
 
 .search-options option {
   color: var(--ink);
-}
-
-.text-button {
-  background: none;
-  border: 0;
-  color: var(--mint);
-  cursor: pointer;
-  font-size: 0.8rem;
-  margin-left: auto;
-  text-decoration: underline;
-}
-
-.api-settings {
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
-  margin-top: 17px;
-  padding-top: 17px;
-}
-
-.api-settings small {
-  color: #bbc7c0;
-  display: block;
-  font-size: 0.7rem;
-  margin-top: 8px;
-}
-
-.button-small {
-  padding: 8px 12px;
-  white-space: nowrap;
 }
 
 .status-message {

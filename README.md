@@ -7,9 +7,9 @@ Atmos is a responsive weather dashboard for Homework 2. It retrieves forecast da
 1. Run `npm install` once.
 2. In one terminal, run `npm run compile` to watch Sass changes.
 3. In another terminal, run `npm run serve` and open the provided local URL.
-4. Choose **API settings**, paste a WeatherAPI.com key, and search by city or ZIP code.
+4. Add your WeatherAPI.com key to `js/config.js`, then open the app. The default forecast loads automatically; users can search by city or ZIP code afterward.
 
-The API key is stored only in browser `localStorage`; no key is committed to this repository. WeatherAPI's plan limits the maximum forecast range, so the app displays the number of days returned by the API.
+The key is read from browser configuration because this is a vanilla JavaScript app. Any key shipped to a browser can be inspected by users, so use a server-side proxy for a production deployment. WeatherAPI's plan limits the maximum forecast range, so the app displays the number of days returned by the API.
 
 ## Assignment coverage
 
@@ -22,8 +22,9 @@ The API key is stored only in browser `localStorage`; no key is committed to thi
 ## Change log
 
 - **Checkpoint 1:** Set up npm scripts and Sass structure.
-- **Checkpoint 2:** Added complete responsive dashboard shell, local API-key handling, WeatherAPI request, loading/error states, and JSON data rendering.
+- **Checkpoint 2:** Added complete responsive dashboard shell, WeatherAPI request, loading/error states, and JSON data rendering.
 - **Checkpoint 3:** Added README assignment notes and local run instructions.
+- **Checkpoint 4:** Removed user API settings and switched to automatic startup configuration.
 
 ## Deployment
 

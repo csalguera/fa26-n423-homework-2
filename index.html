@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./js/config.js"></script>
     <script defer src="./js/app.js"></script>
     <title>Atmos | Weather, clearly</title>
   </head>
@@ -63,30 +64,6 @@
               <option value="7">7 days</option>
               <option value="10">10 days</option>
               <option value="14">14 days</option></select
-            ><button class="text-button" type="button" id="settings-button">
-              API settings
-            </button>
-          </div>
-          <div class="api-settings" id="api-settings" hidden>
-            <label for="api-key-input">WeatherAPI.com key</label>
-            <div class="key-row">
-              <input
-                id="api-key-input"
-                type="password"
-                placeholder="Paste your key locally"
-                autocomplete="off"
-              /><button
-                class="button button-small"
-                type="button"
-                id="save-key-button"
-              >
-                Save key
-              </button>
-            </div>
-            <small
-              >Your key stays in this browser and is never committed to the
-              project.</small
-            >
           </div>
         </form>
       </section>
@@ -97,7 +74,7 @@
         role="status"
         aria-live="polite"
       >
-        Add a WeatherAPI.com key in API settings to load live weather.
+        Loading the latest forecast...
       </section>
       <section class="weather-layout" id="today" aria-label="Current weather">
         <article class="current-card">
