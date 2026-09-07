@@ -1,0 +1,88 @@
+.insight-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1.35fr 1fr;
+  margin: 74px 0;
+}
+
+.insight-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 28px;
+}
+
+.insight-value {
+  display: block;
+  font-family: "Space Grotesk";
+  font-size: 2.5rem;
+  margin-top: 34px;
+}
+
+.air-1,
+.air-2 {
+  color: var(--green);
+}
+
+.air-3 {
+  color: #c18b22;
+}
+
+.air-4,
+.air-5,
+.air-6 {
+  color: var(--coral);
+}
+
+.air-scale {
+  background: linear-gradient(
+    90deg,
+    #7cbc81 0 35%,
+    #f5c75c 35% 65%,
+    #e57c5b 65%
+  );
+  border-radius: 6px;
+  height: 8px;
+  margin-top: 25px;
+}
+
+.air-labels {
+  color: var(--muted);
+  display: flex;
+  font-size: 0.65rem;
+  justify-content: space-between;
+  margin-top: 7px;
+}
+
+.status-dot,
+.alert-icon {
+  border-radius: 50%;
+  display: block;
+  height: 14px;
+  width: 14px;
+}
+
+.status-dot.good {
+  background: var(--green);
+}
+
+.alert-icon {
+  align-items: center;
+  background: var(--yellow);
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  height: 24px;
+  justify-content: center;
+}
+
+.alert-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 40px;
+}
+
+.alert-card p:last-child {
+  color: var(--muted);
+  font-size: 0.82rem;
+}

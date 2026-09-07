@@ -1,2 +1,8 @@
-@import "structure.scss";
-@import "nav.scss";
+@use "structure";
+@use "nav";
+@use "hero";
+@use "weather";
+@use "forecast";
+@use "insights";
+@use "footer";
+@use "responsive";

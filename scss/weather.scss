@@ -1,0 +1,130 @@
+.weather-layout {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1.35fr 1fr;
+}
+
+.current-card,
+.sun-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 28px;
+}
+
+.card-heading {
+  align-items: start;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-heading h2,
+.card-heading p {
+  margin: 0;
+}
+
+.card-heading p:last-child {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: 7px;
+}
+
+.weather-icon {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.weather-icon img {
+  height: 72px;
+  width: 72px;
+}
+
+.temperature-row {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  margin: 38px 0 32px;
+}
+
+.temperature-row > span:first-child {
+  font-family: "Space Grotesk";
+  font-size: 6rem;
+  font-weight: 600;
+  line-height: 0.8;
+}
+
+.temperature-row .degree {
+  align-self: start;
+  font-size: 2rem;
+}
+
+.temperature-row div {
+  display: grid;
+  gap: 5px;
+}
+
+.temperature-row div span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.temperature-row b {
+  color: var(--ink);
+}
+
+.current-metrics {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(4, 1fr);
+  padding-top: 20px;
+}
+
+.current-metrics span,
+.sun-times span {
+  color: var(--muted);
+  display: block;
+  font-size: 0.73rem;
+  margin-bottom: 4px;
+}
+
+.current-metrics strong {
+  font-size: 0.83rem;
+}
+
+.moon-mark {
+  color: var(--green);
+  font-size: 2rem;
+}
+
+.sun-times {
+  display: grid;
+  gap: 24px 14px;
+  grid-template-columns: 1fr 1fr;
+  margin: 44px 0 28px;
+}
+
+.sun-times strong {
+  font-size: 1.05rem;
+}
+
+.daylight-bar {
+  background: #e9eee8;
+  border-radius: 10px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.daylight-bar span {
+  background: var(--yellow);
+  border-radius: inherit;
+  display: block;
+  height: 100%;
+  width: 67%;
+}
+
+.card-note {
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin: 12px 0 0;
+}

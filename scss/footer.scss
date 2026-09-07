@@ -1,0 +1,13 @@
+.site-footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  display: flex;
+  font-size: 0.75rem;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  padding-top: 20px;
+}
+
+.site-footer a {
+  color: var(--green);
+}

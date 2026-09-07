@@ -11,30 +11,31 @@
 }
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html,
 body {
-  min-height: 100%;
   background: var(--paper);
   color: var(--ink);
   font-family: "DM Sans", sans-serif;
   line-height: 1.45;
+  min-height: 100%;
 }
 
 body::before {
+  background: radial-gradient(circle at 80% 10%, rgba(217, 241, 216, 0.7), transparent 28%), radial-gradient(circle at 10% 60%, rgba(245, 199, 92, 0.13), transparent 24%);
   content: "";
-  position: fixed;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle at 80% 10%, rgba(217, 241, 216, 0.7), transparent 28%), radial-gradient(circle at 10% 60%, rgba(245, 199, 92, 0.13), transparent 24%);
+  position: fixed;
   z-index: -1;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: "Space Grotesk", sans-serif;
   letter-spacing: 0;
 }
@@ -59,7 +60,9 @@ a {
   color: inherit;
 }
 
-button, input, select {
+button,
+input,
+select {
   font: inherit;
 }
 
@@ -68,22 +71,34 @@ button, input, select {
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   margin: 0 0 0.55rem;
+  text-transform: uppercase;
 }
 
-.site-header, main, .site-footer {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 16px;
+}
+
+.site-header,
+main,
+.site-footer {
   max-width: 1240px;
   margin-inline: auto;
   padding-inline: 28px;
 }
 
 .site-header {
-  display: flex;
   align-items: center;
+  display: flex;
+  gap: 24px;
   justify-content: space-between;
   min-height: 82px;
-  gap: 24px;
 }
 
 .brand {
@@ -118,7 +133,8 @@ button, input, select {
   text-decoration: none;
 }
 
-.main-nav a.is-active, .main-nav a:hover {
+.main-nav a.is-active,
+.main-nav a:hover {
   color: var(--ink);
   font-weight: 700;
 }
@@ -163,24 +179,27 @@ button, input, select {
 .search-panel {
   background: var(--ink);
   border-radius: 12px;
+  box-shadow: 0 18px 50px rgba(23, 35, 33, 0.15);
   color: white;
   padding: 26px;
-  box-shadow: 0 18px 50px rgba(23, 35, 33, 0.15);
 }
 
-.search-panel > label, .api-settings label {
+.search-panel > label,
+.api-settings label {
   display: block;
   font-size: 0.8rem;
   font-weight: 700;
   margin-bottom: 9px;
 }
 
-.search-row, .key-row {
+.search-row,
+.key-row {
   display: flex;
   gap: 8px;
 }
 
-input, select {
+input,
+select {
   background: white;
   border: 1px solid transparent;
   border-radius: 5px;
@@ -257,7 +276,8 @@ input, select {
   padding: 10px 14px;
 }
 
-.status-message.is-success {
+.status-message.is-success,
+.status-message.is-loading {
   border-color: var(--green);
 }
 
@@ -266,30 +286,28 @@ input, select {
   color: #a94d32;
 }
 
-.status-message.is-loading {
-  border-color: var(--green);
-}
-
-.weather-layout, .insight-grid {
+.weather-layout {
   display: grid;
   gap: 18px;
   grid-template-columns: 1.35fr 1fr;
 }
 
-.current-card, .sun-card, .insight-card {
+.current-card,
+.sun-card {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 28px;
 }
 
-.card-heading, .section-header {
+.card-heading {
   align-items: start;
   display: flex;
   justify-content: space-between;
 }
 
-.card-heading h2, .card-heading p {
+.card-heading h2,
+.card-heading p {
   margin: 0;
 }
 
@@ -299,14 +317,14 @@ input, select {
   margin-top: 7px;
 }
 
-.weather-icon img {
-  height: 72px;
-  width: 72px;
-}
-
 .weather-icon {
   font-size: 4rem;
   line-height: 1;
+}
+
+.weather-icon img {
+  height: 72px;
+  width: 72px;
 }
 
 .temperature-row {
@@ -324,8 +342,8 @@ input, select {
 }
 
 .temperature-row .degree {
-  font-size: 2rem;
   align-self: start;
+  font-size: 2rem;
 }
 
 .temperature-row div {
@@ -350,7 +368,8 @@ input, select {
   padding-top: 20px;
 }
 
-.current-metrics span, .sun-times span {
+.current-metrics span,
+.sun-times span {
   color: var(--muted);
   display: block;
   font-size: 0.73rem;
@@ -405,6 +424,8 @@ input, select {
 .section-header {
   align-items: end;
   border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 16px;
   padding-bottom: 15px;
 }
@@ -441,7 +462,8 @@ input, select {
   border-color: #a9d4aa;
 }
 
-.hour-item span, .hour-item small {
+.hour-item span,
+.hour-item small {
   color: var(--muted);
   font-size: 0.72rem;
 }
@@ -480,8 +502,8 @@ input, select {
 
 .forecast-date {
   display: flex;
-  justify-content: space-between;
   gap: 5px;
+  justify-content: space-between;
 }
 
 .forecast-date strong {
@@ -528,8 +550,8 @@ input, select {
 
 .forecast-facts span {
   color: var(--muted);
-  font-size: 0.68rem;
   display: flex;
+  font-size: 0.68rem;
   justify-content: space-between;
 }
 
@@ -538,7 +560,17 @@ input, select {
 }
 
 .insight-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1.35fr 1fr;
   margin: 74px 0;
+}
+
+.insight-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 28px;
 }
 
 .insight-value {
@@ -548,7 +580,8 @@ input, select {
   margin-top: 34px;
 }
 
-.air-1, .air-2 {
+.air-1,
+.air-2 {
   color: var(--green);
 }
 
@@ -556,7 +589,9 @@ input, select {
   color: #c18b22;
 }
 
-.air-4, .air-5, .air-6 {
+.air-4,
+.air-5,
+.air-6 {
   color: var(--coral);
 }
 
@@ -575,7 +610,8 @@ input, select {
   margin-top: 7px;
 }
 
-.status-dot, .alert-icon {
+.status-dot,
+.alert-icon {
   border-radius: 50%;
   display: block;
   height: 14px;
@@ -631,7 +667,9 @@ input, select {
     overflow-x: auto;
     width: 100%;
   }
-  .hero, .weather-layout, .insight-grid {
+  .hero,
+  .weather-layout,
+  .insight-grid {
     grid-template-columns: 1fr;
   }
   .hero {
@@ -645,7 +683,9 @@ input, select {
   }
 }
 @media (max-width: 480px) {
-  .site-header, main, .site-footer {
+  .site-header,
+  main,
+  .site-footer {
     padding-inline: 18px;
   }
   .account-actions .button-quiet {
@@ -673,13 +713,4 @@ input, select {
     flex-direction: column;
     gap: 6px;
   }
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin-bottom: 16px;
 }

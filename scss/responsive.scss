@@ -1,0 +1,71 @@
+@media (max-width: 800px) {
+  .site-header {
+    flex-wrap: wrap;
+    padding-top: 18px;
+  }
+
+  .main-nav {
+    order: 3;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .hero,
+  .weather-layout,
+  .insight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 55px;
+  }
+
+  .forecast-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .current-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header,
+  main,
+  .site-footer {
+    padding-inline: 18px;
+  }
+
+  .account-actions .button-quiet {
+    display: none;
+  }
+
+  .hero {
+    gap: 30px;
+  }
+
+  .search-row {
+    flex-direction: column;
+  }
+
+  .button-primary {
+    width: 100%;
+  }
+
+  .temperature-row > span:first-child {
+    font-size: 4.8rem;
+  }
+
+  .forecast-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .forecast-card {
+    padding: 14px 11px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

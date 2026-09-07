@@ -1,0 +1,141 @@
+.section-block {
+  margin-top: 74px;
+}
+
+.section-header {
+  align-items: end;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 15px;
+}
+
+.section-header h2 {
+  margin: 0;
+}
+
+.section-meta {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.hourly-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 9px;
+}
+
+.hour-item {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  flex: 0 0 96px;
+  gap: 9px;
+  justify-items: center;
+  padding: 15px 9px;
+}
+
+.hour-item.is-current {
+  background: var(--mint);
+  border-color: #a9d4aa;
+}
+
+.hour-item span,
+.hour-item small {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.hour-item img {
+  height: 38px;
+  width: 38px;
+}
+
+.hour-item strong {
+  font-size: 1.15rem;
+}
+
+.empty-state {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.forecast-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.forecast-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px 14px;
+}
+
+.forecast-card.is-today {
+  background: var(--mint);
+  border-color: #a9d4aa;
+}
+
+.forecast-date {
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+}
+
+.forecast-date strong {
+  font-size: 0.82rem;
+}
+
+.forecast-date span {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.forecast-card > img {
+  height: 50px;
+  margin: 24px 0 7px;
+  width: 50px;
+}
+
+.forecast-temp {
+  align-items: baseline;
+  display: flex;
+  gap: 8px;
+}
+
+.forecast-temp strong {
+  font-size: 1.5rem;
+}
+
+.forecast-temp span {
+  color: var(--muted);
+}
+
+.forecast-card p {
+  color: var(--muted);
+  font-size: 0.72rem;
+  min-height: 32px;
+}
+
+.forecast-facts {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 5px;
+  padding-top: 10px;
+}
+
+.forecast-facts span {
+  color: var(--muted);
+  display: flex;
+  font-size: 0.68rem;
+  justify-content: space-between;
+}
+
+.forecast-facts b {
+  color: var(--ink);
+}
