@@ -28,15 +28,12 @@ The key is read from browser configuration because this is a vanilla JavaScript 
 
 ## Deployment
 
-- GitHub repository: `https://github.com/csalguera/fa26-n423-homework-2`
-- Web 4 host: `in-info-web4.luddy.indianapolis.iu.edu`
-- Web 4 URL pattern: `https://in-info-web4.luddy.indianapolis.iu.edu/~YOUR_USERNAME/YOUR_PROJECT_NAME/`
+- GitHub repository: [fa26-n423-homework-2](https://github.com/csalguera/fa26-n423-homework-2)
+- Live Web 4 app: [Atmos weather dashboard](https://in-info-web4.luddy.indianapolis.iu.edu/~csalguer/n423-homework-2/)
 
-The local `sftp.json` template is configured for Web 4 over SFTP. Before uploading:
+The local `sftp.json` template is configured for Web 4 over SFTP. For future updates:
 
-1. Replace `username` and `project_name` in `sftp.json` with your IU username and project folder name.
-2. Use the VS Code SFTP extension's upload-folder command from the project root.
-3. Enter your IU password directly in the terminal or extension prompt; do not commit it.
-4. Open the URL above with your actual username and project name, then replace this README URL pattern with the final published URL.
+1. Use the VS Code SFTP extension's upload-folder command from the project root.
+2. Enter your IU password directly in the terminal or extension prompt; do not commit it.
 
 The upload excludes `node_modules`, Sass source, and package metadata because Web 4 only needs the compiled static site files: `index.html`, `css/`, and `js/`.
